@@ -9,11 +9,6 @@ function processStandardInvoice(amount, city, weightKg, taxRate = 0.20) {
     return { status: "PROCESSED", total: Number(total.toFixed(2)) };
 }
 
-function processTaxExemptInvoice(amount, city, weightKg) {
-    const total = amount + calculateDeliveryCost(city, weightKg);
-    return { status: "TAX_EXEMPT", total: Number(total.toFixed(2)) };
-}
-
 module.exports = {
     calculateDeliveryCost,
     processStandardInvoice,
